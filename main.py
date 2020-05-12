@@ -21,11 +21,15 @@ bot = TelegramClient('bot', API_ID, API_HASH, proxy=proxy,
 
 replace_lowers = [
     ('й', 'ф'), ('ц', 'ы'), ('у', 'в'), ('к', 'а'), ('е', 'п'), ('н', 'р'),
-    ('г', 'о'), ('ш', 'л'), ('щ', 'д'), ('з', 'ж'), ('х', 'э')
+    ('г', 'о'), ('ш', 'л'), ('щ', 'д'), ('з', 'ж'), ('х', 'э'), ('q', 'a'),
+    ('w', 's'), ('e', 'd'), ('r', 'f'), ('t', 'g'), ('y', 'h'), ('u', 'j'),
+    ('i', 'k'), ('o', 'l'), ('p', ';'), ('[', '\''), ('{', '"')
 ]
 replace_capitals = []
 for f, t in replace_lowers:
     replace_capitals.append((f.upper(), t.upper()))
+replace_capitals.remove(('P', ';'))
+replace_capitals.append(('P', ':'))
 replace = dict(replace_lowers + replace_capitals)
 
 async def lyfrize(text):
