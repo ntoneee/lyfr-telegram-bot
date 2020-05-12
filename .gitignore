@@ -1,6 +1,8 @@
 .env
 .vs
 .vscode
-__pycache__
-bot.session
-lyfrbot.service
+.idea
+**/__pycache__/
+*.session
+*.service
+venv
