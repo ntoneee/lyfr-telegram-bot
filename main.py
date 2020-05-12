@@ -1,8 +1,7 @@
 import os
 
-if os.getenv('PRODUCTION') is None:
-    from dotenv import load_dotenv
-    load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 from telethon import TelegramClient, events, connection
 
