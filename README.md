@@ -1,2 +1,2 @@
 # lyfr-telegram-bot
-Лифробот: t.me/lyfrbot
+Лифробот: (t.me/lyfrbot)[в Telegram]
