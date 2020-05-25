@@ -25,6 +25,7 @@ replace_lowers = [
     ('w', 's'), ('e', 'd'), ('r', 'f'), ('t', 'g'), ('y', 'h'), ('u', 'j'),
     ('i', 'k'), ('o', 'l'), ('p', ';'), ('[', '\''), ('{', '"')
 ]
+replace_lowers['ё'] = replace_lowers['е']
 replace_capitals = []
 for f, t in replace_lowers:
     replace_capitals.append((f.upper(), t.upper()))
