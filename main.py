@@ -5,7 +5,7 @@ load_dotenv()
 
 from telethon import TelegramClient, events, connection
 import telethon
-# 1078376537:AAGP7BZWWxvUG2eCntsJ_TjWy2zuv5md8Cos
+
 PROXY_URL = os.getenv('PROXY_URL')
 PROXY_PORT = os.getenv('PROXY_PORT')
 PROXY_SECRET = os.getenv('PROXY_SECRET')
