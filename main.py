@@ -65,9 +65,6 @@ def gen_ctkl_replace() -> dict:
     for f, t in it:
         repl[f.upper()] = t.upper()
     
-    it = list(repl.items())
-    for f, t in it:
-        repl[t] = f
 
     repl['Х'] = '{'
     repl['Ъ'] = '}'
@@ -75,6 +72,11 @@ def gen_ctkl_replace() -> dict:
     repl['Э'] = '"'
     repl['Б'] = '<'
     repl['Ю'] = '>'
+    
+    it = list(repl.items())
+    for f, t in it:
+        repl[t] = f
+        
     return repl
 
 ciphers = [
