@@ -9,14 +9,14 @@ import telethon
 PROXY_URL = os.getenv('PROXY_URL')
 PROXY_PORT = os.getenv('PROXY_PORT')
 PROXY_SECRET = os.getenv('PROXY_SECRET')
+USE_PROXY = PROXY_URL and PROXY_PORT and PROXY_SECRET
 API_ID = os.getenv('API_ID')
 API_HASH = os.getenv('API_HASH')
 TOKEN = os.getenv('BOT_TOKEN')
-proxy = (PROXY_URL, int(PROXY_PORT), PROXY_SECRET)
+proxy = {'connection': connection.ConnectionTcpMTProxyRandomizedIntermediate,
+         'proxy': (PROXY_URL, int(PROXY_PORT), PROXY_SECRET)} if USE_PROXY else {}
 
-bot = TelegramClient('bot', API_ID, API_HASH, proxy=proxy, 
-    connection=connection.ConnectionTcpMTProxyRandomizedIntermediate
-    ).start(bot_token=TOKEN)
+bot = TelegramClient('bot', API_ID, API_HASH, **proxy).start(bot_token=TOKEN)
 
 class Cipher:
     def __init__(self, verb: str, replace: dict):
